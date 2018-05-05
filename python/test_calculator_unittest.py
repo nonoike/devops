@@ -1,5 +1,5 @@
 import unittest
-import calculator_unittest
+import calculator
 
 test_mode = "release"
 
@@ -7,7 +7,7 @@ test_mode = "release"
 class TestCalculator(unittest.TestCase):
     def setUp(self):
         print("setup")
-        self.cal = calculator_unittest.Calculator(1)
+        self.cal = calculator.Calculator(1)
 
     def tearDown(self):
         print("teardown")
@@ -20,7 +20,7 @@ class TestCalculator(unittest.TestCase):
 
     def test_add_raise(self):
         with self.assertRaises(ValueError):
-            calculator_unittest.Calculator("2")
+            calculator.Calculator("2")
 
     # @unittest.skip("skip test")
     @unittest.skipIf(test_mode == "release", "release mode")

@@ -1,3 +1,6 @@
+import os
+
+
 class Calculator(object):
     def __init__(self, x):
         if type(x) is not int:
@@ -13,3 +16,10 @@ class Calculator(object):
         if type(y) is not int:
             raise ValueError
         return self.x + y
+
+    def output(self, dir_path, file_name):
+        if not os.path.exists(dir_path):
+            os.mkdir(dir_path)
+        file_path = os.path.join(dir_path, file_name)
+        with open(file_path, "w") as f:
+            f.write("test")
